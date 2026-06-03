@@ -16,7 +16,7 @@ export function EggItem({ state, prize }: { index: number; state: ItemState; pri
   return (
     <span
       className={[
-        'relative grid h-[96%] w-[84%] place-items-center bg-gradient-to-b from-[#fbf3e2] to-[#e7d3a8] shadow-clay',
+        'relative grid h-[86%] w-[74%] place-items-center bg-gradient-to-b from-[#fbf3e2] to-[#e7d3a8] shadow-clay',
         'rounded-[50%_50%_50%_50%/60%_60%_42%_42%]',
         'ring-1 ring-inset ring-white/40',
         state === 'opening' ? 'animate-wiggle' : '',
@@ -24,9 +24,9 @@ export function EggItem({ state, prize }: { index: number; state: ItemState; pri
       ].join(' ')}
     >
       {dim ? (
-        <Lock className="h-6 w-6 text-neutral-500" strokeWidth={2.5} />
+        <Lock className="h-5 w-5 text-neutral-500" strokeWidth={2.5} />
       ) : (
-        <span className="font-display text-[2rem] font-extrabold text-tsel-red drop-shadow-[0_1px_0_rgba(124,12,30,0.2)]">?</span>
+        <span className="font-display text-[1.6rem] font-extrabold text-tsel-red drop-shadow-[0_1px_0_rgba(124,12,30,0.2)]">?</span>
       )}
       {!dim && (
         <>
