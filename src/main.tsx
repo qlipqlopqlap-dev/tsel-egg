@@ -2,17 +2,15 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MotionConfig } from 'framer-motion'
 import { PhoneFrame } from './components/PhoneFrame'
-import { EggPage } from './pages/EggPage'
+import { KoperPage } from './pages/KoperPage'
 import './styles.css'
 
-// Single-game app (Pecahkan Telur). Renders one game inside the shared phone
-// frame — no router needed; the "home"/claim links are plain <a href> targets
-// resolved from VITE_URL_HOME / VITE_CLAIM_URL (see src/lib/urls.ts).
+// Double variant — Koper game served at telkomsel3double on port 5287.
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <MotionConfig reducedMotion="user">
       <PhoneFrame>
-        <EggPage />
+        <KoperPage />
       </PhoneFrame>
     </MotionConfig>
   </StrictMode>,

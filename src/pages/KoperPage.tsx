@@ -1,20 +1,20 @@
 import { GameScreen } from '../components/GameScreen'
 import { ResultOverlay } from '../components/ResultOverlay'
 import { PickGame } from '../components/games/PickGame'
-import { EggItem } from '../components/games/EggItem'
+import { KoperItem } from '../components/games/KoperItem'
 import { CAMPAIGN } from '../lib/content'
 import { GAMES } from '../lib/games'
 import { getPrize } from '../lib/prizes'
 import { useGameSession } from '../lib/useGameSession'
 
-const WIN = getPrize('kuota15')
+const WIN = getPrize('pulsa50')
 
-export function EggPage() {
+export function KoperPage() {
   const { prize, revealed, expired, setExpired, reveal, reduced } = useGameSession()
   return (
     <GameScreen
-      dapat={GAMES.egg.lead}
-      instruction={GAMES.egg.instruction}
+      dapat={GAMES.koper.lead}
+      instruction={GAMES.koper.instruction}
       expired={expired}
       onExpire={() => setExpired(true)}
     >
@@ -27,7 +27,7 @@ export function EggPage() {
           reduced={reduced}
           prize={WIN}
           onResult={reveal}
-          renderItem={(args) => <EggItem {...args} />}
+          renderItem={(args) => <KoperItem {...args} />}
         />
       )}
     </GameScreen>

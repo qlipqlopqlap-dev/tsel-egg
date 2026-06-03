@@ -1,11 +1,11 @@
-// PM2 ecosystem config — Pecahkan Telur (standalone, port 5282).
-// nginx reverse-proxies telkomsel3.qlipmobile.com → 127.0.0.1:5282.
+// PM2 ecosystem config — Pilih Koper (Double) (standalone, port 5287).
+// nginx reverse-proxies telkomsel3double.qlipmobile.com → 127.0.0.1:5287.
 
 module.exports = {
   apps: [
     {
-      name: 'tsel-egg',
-      cwd: '/home/qlip/tsel-egg',
+      name: 'tsel-egg-double',
+      cwd: '/home/qlip/tsel-egg-double',
       script: 'server.mjs',
       interpreter: 'node',
       instances: 1,
@@ -14,7 +14,7 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         HOST: '127.0.0.1',
-        PORT: '5282',
+        PORT: '5287',
       },
 
       // Restart behavior
@@ -27,8 +27,8 @@ module.exports = {
 
       // Logs
       log_date_format: 'YYYY-MM-DD HH:mm:ss',
-      error_file: '/home/qlip/tsel-egg/logs/tsel-egg.err.log',
-      out_file: '/home/qlip/tsel-egg/logs/tsel-egg.out.log',
+      error_file: '/home/qlip/tsel-egg-double/logs/tsel-egg-double.err.log',
+      out_file: '/home/qlip/tsel-egg-double/logs/tsel-egg-double.out.log',
       merge_logs: true,
       time: true,
     },
