@@ -12,13 +12,15 @@ const WIN = getPrize('kuota15')
 export function EggPage() {
   const { prize, revealed, expired, setExpired, reveal, reduced } = useGameSession()
   return (
-    <>
-      <GameScreen
-        dapat={GAMES.egg.lead}
-        instruction={GAMES.egg.instruction}
-        expired={expired}
-        onExpire={() => setExpired(true)}
-      >
+    <GameScreen
+      dapat={GAMES.egg.lead}
+      instruction={GAMES.egg.instruction}
+      expired={expired}
+      onExpire={() => setExpired(true)}
+    >
+      {revealed && prize ? (
+        <ResultOverlay prize={prize} />
+      ) : (
         <PickGame
           count={CAMPAIGN.ticketCount}
           disabled={expired || revealed}
@@ -27,8 +29,7 @@ export function EggPage() {
           onResult={reveal}
           renderItem={(args) => <EggItem {...args} />}
         />
-      </GameScreen>
-      <ResultOverlay open={revealed} prize={prize} />
-    </>
+      )}
+    </GameScreen>
   )
 }
